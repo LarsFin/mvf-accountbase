@@ -21,20 +21,6 @@ class App
     @customer_session_class.new(accounts)
   end
 
-  def build_url(key)
-    "https://mvf-devtest-s3api.s3-eu-west-1.amazonaws.com/#{key}"
-  end
-
-  def get_account_base(key)
-    url = build_url(key)
-    uri = URI(url)
-    Net::HTTP.get(uri)
-  end
-
-  def parse(response)
-    JSON.parse(response)
-  end
-
   private
 
   def verify_id(id)
@@ -43,5 +29,19 @@ class App
 
   def get_details(id)
     accounts.select { |account| account['id'] == id }.pop
+  end
+
+  def build_url(key)
+    "https://mvf-devtest-s3api.s3-eu-west-1.amazonaws.com/#{key}"
+  end
+
+  def get_JSON(key)
+    url = build_url(key)
+    uri = URI(url)
+    Net::HTTP.get(uri)
+  end
+
+  def parse(response)
+    JSON.parse(response)
   end
 end
