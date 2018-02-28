@@ -1,7 +1,7 @@
 # MVF API
 An application to implement the following user stories;
 
-priority -> **4** √
+priority -> **4** √ 
 ```
 As an account holder,
 I want to check my balance,
