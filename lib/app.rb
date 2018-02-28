@@ -11,8 +11,10 @@ class App
   end
 
   def create_account_session(id)
-    @account_session_class.new
+    @account_session_class.new if verify_id(id)
   end
+
+  private
 
   def verify_id(id)
     accounts.any? { |account| account['id'] == id }
