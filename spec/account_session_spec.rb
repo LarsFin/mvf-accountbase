@@ -8,7 +8,7 @@ describe AccountSession do
     'lastname' => 'testlastname',
     'email' => 'testemail',
     'telephone' => '7357',
-    'balance' => '£0.99'
+    'balance' => '0.99'
   }
 
   subject { described_class.new(details)}
@@ -21,7 +21,7 @@ describe AccountSession do
 
   describe '#balance' do
     it 'Should return the balance' do
-      expect(subject.balance).to eq('£0.99')
+      expect(subject.balance).to eq('0.99')
     end
   end
 

@@ -15,14 +15,14 @@ I want to check the details being held about me,
 so that I can make sure the correct details are being stored.
 ```
 
-priority -> **2**
+priority -> **1**
 ```
 As the customer,
 I want to get a list of accounts in debt,
 so that I can assess them for overdraft interest.
 ```
 
-priority -> **1**
+priority -> **2**
 ```
 As the customer,
 I want to get the name, email address, telephone and balance for an account,
