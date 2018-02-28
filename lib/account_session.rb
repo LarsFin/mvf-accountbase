@@ -11,10 +11,10 @@ class AccountSession
   end
 
   def information
-    [get_detail("firstname"),
-     get_detail("lastname"),
-     get_detail("email"),
-     get_detail("telephone")]
+    [get_detail('firstname'),
+     get_detail('lastname'),
+     get_detail('email'),
+     get_detail('telephone')]
   end
 
   private
