@@ -16,8 +16,13 @@ class CustomerSession
   end
 
   def overdrawn_accounts
-    overdrawn_accounts = accounts.select { |account| account['balance'].to_f < 0 }
-    overdrawn_accounts.map { |account| [account['id'], account['balance']]}
+    overdrawn_accounts = accounts.select do |account|
+      account['balance'].to_f < 0
+    end
+    overdrawn_accounts.map do |account|
+      [get_detail_of_account(account, 'id'),
+       get_detail_of_account(account, 'balance')]
+    end
   end
 
   private
