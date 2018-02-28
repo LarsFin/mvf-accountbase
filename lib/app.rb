@@ -31,6 +31,10 @@ class App
     Net::HTTP.get(uri)
   end
 
+  def parse(response)
+    JSON.parse(response)
+  end
+
   private
 
   def verify_id(id)
