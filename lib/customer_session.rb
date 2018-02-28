@@ -15,6 +15,11 @@ class CustomerSession
      get_detail_of_account(account, 'telephone')]
   end
 
+  def overdrawn_accounts
+    overdrawn_accounts = accounts.select { |account| account['balance'].to_f < 0 }
+    overdrawn_accounts.map { |account| [account['id'], account['balance']]}
+  end
+
   private
 
   def get_account(id)

@@ -8,7 +8,7 @@ describe CustomerSession do
     'lastname' => 'testlastname',
     'email' => 'testemail',
     'telephone' => '7357',
-    'balance' => '0.99'
+    'balance' => '-0.99'
   }
 
   acc2 = {
@@ -51,7 +51,7 @@ describe CustomerSession do
 
   describe '#overdrawn_accounts' do
     it 'Should return an array of the ids and balances of accounts that have been overdrawn' do
-      expect(subject.overdrawn_accounts).to eq(['888', '-2000.00'])
+      expect(subject.overdrawn_accounts).to eq([['100', '-0.99'],['888', '-2000.00']])
     end
   end
 
