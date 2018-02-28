@@ -4,6 +4,8 @@ class Controller
                  account_session_class,
                  customer_session_class,
                  current_company_guid)
-    @app = app_class.new
+    @app = app_class.new(account_session_class,
+                         customer_session_class,
+                         current_company_guid)
   end
 end
