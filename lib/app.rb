@@ -1,4 +1,5 @@
 require_relative 'account_session'
+require_relative 'customer_session'
 require 'json'
 # App to be used as the controller by the user
 class App

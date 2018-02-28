@@ -8,7 +8,7 @@ I want to check my balance,
 so that I know how much money I have.
 ```
 
-priority -> **3**
+priority -> **3** √
 ```
 As an account holder,
 I want to check the details being held about me,
