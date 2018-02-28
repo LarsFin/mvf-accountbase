@@ -21,6 +21,12 @@ class App
     @customer_session_class.new(accounts)
   end
 
+  def get_account_base(key)
+    url = build_url(key)
+    json = get_JSON(url)
+    parse(json)
+  end
+
   private
 
   def verify_id(id)
@@ -35,8 +41,7 @@ class App
     "https://mvf-devtest-s3api.s3-eu-west-1.amazonaws.com/#{key}"
   end
 
-  def get_JSON(key)
-    url = build_url(key)
+  def get_JSON(url)
     uri = URI(url)
     Net::HTTP.get(uri)
   end
