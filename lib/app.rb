@@ -1,5 +1,6 @@
 require_relative 'account_session'
 require_relative 'all_current_company_guid'
+require_relative 'controller'
 require_relative 'customer_session'
 require 'json'
 require 'net/http'
