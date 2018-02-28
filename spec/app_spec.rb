@@ -29,10 +29,6 @@ describe App do
   end
 
   describe '#create_account_session' do
-    before(:each) do
-      subject.get_account_base('key1')
-    end
-
     it 'Should call the instantiation of a new instance of "account_session_class" with a valid id given' do
       expect(account_session_class).to receive(:new)
       subject.create_account_session('861fc585-3313-4928-891d-c8711dfe3f8a')
