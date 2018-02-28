@@ -6,26 +6,31 @@
         null,
         1,
         null,
-        2,
+        3,
         null,
         1,
         1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
         null,
         null,
         null
       ],
       "/Users/windsor/Documents/ruby/MVF-api/lib/app.rb": [
-        1,
-        null,
-        1,
         null,
         1,
         1,
         null,
+        1,
+        2,
         null,
         null
       ]
     },
-    "timestamp": 1519813646
+    "timestamp": 1519814280
   }
 }
