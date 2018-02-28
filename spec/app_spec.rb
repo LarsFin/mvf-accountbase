@@ -8,8 +8,8 @@ describe App do
 
   describe 'App instantiation' do
     describe '#App_accounts' do
-      it 'App should be initialised with a nil attribute "accounts"' do
-        expect(subject.accounts).to be(nil)
+      it 'App should be initialised with an empty "accounts" attribute' do
+        expect(subject.accounts.empty?).to be(true)
       end
 
       it 'App should be initialised with a "company_guid" attribute that is passed in' do
