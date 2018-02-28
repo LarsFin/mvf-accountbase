@@ -4,12 +4,16 @@ describe App do
 
   let(:account_session_class) { double('account_session_class', new: 'new called') }
   let(:customer_session_class) { double('customer_session_class', new: 'new called') }
-  subject { described_class.new(account_session_class, customer_session_class) }
+  subject { described_class.new(account_session_class, customer_session_class, ['key1', 'key2', 'key3']) }
 
   describe 'App instantiation' do
     describe '#App_accounts' do
       it 'App should be initialised with a nil attribute "accounts"' do
         expect(subject.accounts).to be(nil)
+      end
+
+      it 'App should be initialised with a "company_guid" attribute that is passed in' do
+        expect(subject.company_guid).to eq(['key1', 'key2', 'key3'])
       end
     end
 
