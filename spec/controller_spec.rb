@@ -18,8 +18,8 @@ describe Controller do
 
   describe '#run_app' do
     it 'should output welcom message' do
-      expect { subject.run }.to output("Welcome").to_stdout
+      expect { subject.run }.to output("Welcome\n").to_stdout
     end
-  end  
+  end
 
 end

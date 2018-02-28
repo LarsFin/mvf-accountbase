@@ -11,4 +11,8 @@ class Controller
                          current_company_guid)
     @current_user = nil
   end
+
+  def run
+    puts 'Welcome'
+  end
 end
