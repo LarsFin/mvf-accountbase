@@ -1,6 +1,7 @@
 require_relative 'account_session'
 require_relative 'customer_session'
 require 'json'
+require 'net/http'
 # App to be used as the controller by the user
 class App
   attr_reader :accounts, :account_session_class, :customer_session_class
@@ -20,8 +21,14 @@ class App
     @customer_session_class.new(accounts)
   end
 
-  def build_uri(key)
+  def build_url(key)
     "https://mvf-devtest-s3api.s3-eu-west-1.amazonaws.com/#{key}"
+  end
+
+  def get_account_base(key)
+    url = build_url(key)
+    uri = URI(url)
+    response = Net::HTTP.get(uri)
   end
 
   private
