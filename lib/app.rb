@@ -11,12 +11,16 @@ class App
   end
 
   def create_account_session(id)
-    @account_session_class.new if verify_id(id)
+    @account_session_class.new(get_details(id)) if verify_id(id)
   end
 
   private
 
   def verify_id(id)
     accounts.any? { |account| account['id'] == id }
+  end
+
+  def get_details(id)
+    @accounts.select { |account| account['id'] == id }.pop()
   end
 end
