@@ -141,6 +141,11 @@
       "/Users/windsor/Documents/ruby/MVF-api/lib/customer_session.rb": [
         null,
         1,
+        1,
+        null,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/windsor/Documents/ruby/MVF-api/spec/custormer_session_spec.rb": [
@@ -162,6 +167,6 @@
         null
       ]
     },
-    "timestamp": 1519827353
+    "timestamp": 1519827430
   }
 }
