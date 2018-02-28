@@ -16,6 +16,10 @@ class App
     @account_session_class.new(get_details(id)) if verify_id(id)
   end
 
+  def create_customer_session
+    @customer_session_class.new(accounts)
+  end
+
   private
 
   def verify_id(id)
