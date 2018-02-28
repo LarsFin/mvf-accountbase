@@ -13,9 +13,15 @@ SimpleCov.start
 RSpec.configure do |config|
 
   config.before(:each) do
-    stub_request(:get, /mvf-devtest-s3api.s3-eu-west-1.amazonaws.com/).
+    stub_request(:get, "https://mvf-devtest-s3api.s3-eu-west-1.amazonaws.com/key1").
       with(headers: {'Accept'=>'*/*', 'User-Agent'=>'Ruby'}).
       to_return(status: 200, body: '{"accounts":[{"id":"861fc585-3313-4928-891d-c8711dfe3f8a","firstname":"Izayah","lastname":"Hayden","email":"Izaya.HAY6958@yopmail.com","telephone":"01035 837401","balance":"8,759.84"}]}', headers: {})
+    stub_request(:get, "https://mvf-devtest-s3api.s3-eu-west-1.amazonaws.com/key2").
+      with(headers: {'Accept'=>'*/*', 'User-Agent'=>'Ruby'}).
+      to_return(status: 200, body: '{"accounts":[{"id":"testid","firstname":"test","lastname":"testln","email":"testemail","telephone":"09","balance":"-10,390.00"}]}', headers: {})
+    stub_request(:get, "https://mvf-devtest-s3api.s3-eu-west-1.amazonaws.com/key3").
+      with(headers: {'Accept'=>'*/*', 'User-Agent'=>'Ruby'}).
+      to_return(status: 200, body: '{"accounts":[{"id":"testid2","firstname":"test2","lastname":"testln2","email":"testemail2","telephone":"test","balance":"9.00"}]}', headers: {})
   end
 
   config.expect_with :rspec do |expectations|

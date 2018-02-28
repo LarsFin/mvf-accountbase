@@ -60,7 +60,11 @@ describe App do
 
   describe '#get_account_base' do
     it 'Should make a request to the uri and retrieve the correct body' do
-      expect(subject.get_account_base('key')).to eq('{"accounts":[{"id":"861fc585-3313-4928-891d-c8711dfe3f8a","firstname":"Izayah","lastname":"Hayden","email":"Izaya.HAY6958@yopmail.com","telephone":"01035 837401","balance":"8,759.84"}]}')
+      expect(subject.get_account_base('key1')).to eq('{"accounts":[{"id":"861fc585-3313-4928-891d-c8711dfe3f8a","firstname":"Izayah","lastname":"Hayden","email":"Izaya.HAY6958@yopmail.com","telephone":"01035 837401","balance":"8,759.84"}]}')
+    end
+
+    it 'A different key should get the correct account base according to that key' do
+      expect(subject.get_account_base('key3')).to eq('{"accounts":[{"id":"testid2","firstname":"test2","lastname":"testln2","email":"testemail2","telephone":"test","balance":"9.00"}]}')
     end
   end
 
