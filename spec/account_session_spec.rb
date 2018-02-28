@@ -25,4 +25,10 @@ describe AccountSession do
     end
   end
 
+  describe '#information' do
+    it 'Should return contact information on the account holder' do
+      expect(subject.information).to eq(['testname', 'testlastname', 'testemail', '7357'])
+    end
+  end
+
 end

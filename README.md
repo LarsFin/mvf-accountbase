@@ -1,7 +1,7 @@
 # MVF API
 An application to implement the following user stories;
 
-priority -> **4**
+priority -> **4** √
 ```
 As an account holder,
 I want to check my balance,
@@ -29,7 +29,7 @@ I want to get the name, email address, telephone and balance for an account,
 so that I can contact them and talk about their account.
 ```
 
-priority -> **5**
+priority -> **5** √
 ```
 As an account holder,
 I want to have to verify myself,
