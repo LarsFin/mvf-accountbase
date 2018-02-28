@@ -10,7 +10,7 @@ describe App do
     end
 
     it 'Should be able to read real data from an account in accounts array' do
-      expect(subject.accounts[0][:firstname]).to equal("Izayah")
+      expect(subject.accounts[0]["firstname"]).to eq("Izayah")
     end
   end
 
