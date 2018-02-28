@@ -41,7 +41,7 @@ class App
     "https://mvf-devtest-s3api.s3-eu-west-1.amazonaws.com/#{key}"
   end
 
-  def get_JSON(url)
+  def get_json(url)
     uri = URI(url)
     Net::HTTP.get(uri)
   end
