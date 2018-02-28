@@ -8,12 +8,8 @@ describe App do
 
   describe 'App instantiation' do
     describe '#App_accounts' do
-      it 'App should be initialised with an array set to an attirbute "accounts"' do
-        expect(subject.accounts).to be_a Array
-      end
-
-      it 'Should be able to read real data from an account in accounts array' do
-        expect(subject.accounts[0]["firstname"]).to eq("Izayah")
+      it 'App should be initialised with a nil attribute "accounts"' do
+        expect(subject.accounts).to be(nil)
       end
     end
 
@@ -29,6 +25,10 @@ describe App do
   end
 
   describe '#create_account_session' do
+    before(:each) do
+      subject.get_account_base('key1')
+    end
+
     it 'Should call the instantiation of a new instance of "account_session_class" with a valid id given' do
       expect(account_session_class).to receive(:new)
       subject.create_account_session('861fc585-3313-4928-891d-c8711dfe3f8a')
