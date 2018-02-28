@@ -1,0 +1,23 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/windsor/Documents/ruby/MVF-api/spec/app_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/windsor/Documents/ruby/MVF-api/lib/app.rb": [
+        1,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1519813125
+  }
+}
