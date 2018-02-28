@@ -14,5 +14,21 @@ class Controller
 
   def run
     puts 'Welcome'
+    account_holder?
+  end
+
+  def account_holder?
+    puts 'Are you an account holder?'
+  end
+
+  def evaluate(input)
+    return(false) if input[0].casecmp('n').zero?
+    return(true) if input[0].casecmp('y').zero?
+    quit if %w[quit exit].include?(input)
+    return('not-recognisable')
+  end
+
+  def quit
+    puts "Thankyou,\nclosing..."
   end
 end

@@ -17,8 +17,62 @@ describe Controller do
   end
 
   describe '#run_app' do
-    it 'should output welcom message' do
-      expect { subject.run }.to output("Welcome\n").to_stdout
+    it 'should output welcome message, then follow up with question' do
+      expect { subject.run }.to output("Welcome\nAre you an account holder?\n").to_stdout
+    end
+  end
+
+  describe '#quit' do
+    it 'should output welcome message' do
+      expect { subject.quit }.to output("Thankyou,\nclosing...\n").to_stdout
+    end
+  end
+
+  describe '#evaluate' do
+    describe 'positive' do
+      it 'should return true if you type in "YES"' do
+        expect(subject.evaluate("YES")).to be(true)
+      end
+
+      it 'should return true if you type in "yes"' do
+        expect(subject.evaluate("yes")).to be(true)
+      end
+
+      it 'should return true if you type in "y"' do
+        expect(subject.evaluate("y")).to be(true)
+      end
+    end
+
+    describe 'negative' do
+      it 'should return true if you type in "NO"' do
+        expect(subject.evaluate("NO")).to be(false)
+      end
+
+      it 'should return true if you type in "no"' do
+        expect(subject.evaluate("no")).to be(false)
+      end
+
+      it 'should return true if you type in "n"' do
+        expect(subject.evaluate("n")).to be(false)
+      end
+    end
+
+    describe 'quit/exit' do
+      it 'should call exit if you type in "exit"' do
+        expect(subject).to receive(:quit)
+        subject.evaluate('exit')
+      end
+
+      it 'should call exit if you type in "quit"' do
+        expect(subject).to receive(:quit)
+        subject.evaluate('quit')
+      end
+    end
+
+    describe 'unrecognisable' do
+      it 'should call the resort if an unrecognised input is made' do
+        expect(subject.evaluate('gibberish.. mumble mumble..')).to eq('not-recognisable')
+      end
     end
   end
 
