@@ -15,7 +15,7 @@ I want to check the details being held about me,
 so that I can make sure the correct details are being stored.
 ```
 
-priority -> **1**
+priority -> **1** √
 ```
 As the customer,
 I want to get a list of accounts in debt,

@@ -9,10 +9,8 @@ class CustomerSession
   def get_contact_information(id)
     return false unless verify_id(id)
     account = get_account(id)
-    [get_detail_of_account(account, 'firstname'),
-     get_detail_of_account(account, 'lastname'),
-     get_detail_of_account(account, 'email'),
-     get_detail_of_account(account, 'telephone')]
+    get_details_of_account(account,
+                           %w[firstname lastname email telephone])
   end
 
   def overdrawn_accounts
@@ -20,8 +18,7 @@ class CustomerSession
       account['balance'].to_f < 0
     end
     overdrawn_accounts.map do |account|
-      [get_detail_of_account(account, 'id'),
-       get_detail_of_account(account, 'balance')]
+      get_details_of_account(account, %w[id balance])
     end
   end
 
@@ -31,8 +28,8 @@ class CustomerSession
     accounts.select { |account| account['id'] == id }.pop
   end
 
-  def get_detail_of_account(account, detail)
-    account[detail]
+  def get_details_of_account(account, detail_list)
+    detail_list.map { |detail| account[detail] }
   end
 
   def verify_id(id)
