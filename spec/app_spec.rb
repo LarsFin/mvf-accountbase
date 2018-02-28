@@ -64,4 +64,10 @@ describe App do
     end
   end
 
+  describe '#parse' do
+    it 'Should parse the JSON to get a ruby hash' do
+      expect(subject.parse('{"accounts":[{"id":"861fc585-3313-4928-891d-c8711dfe3f8a","firstname":"Izayah","lastname":"Hayden","email":"Izaya.HAY6958@yopmail.com","telephone":"01035 837401","balance":"8,759.84"}}')).to be_a Hash
+    end
+  end
+
 end
