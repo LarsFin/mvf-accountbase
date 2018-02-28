@@ -20,7 +20,7 @@ class App
   end
 
   def create_account_session(id)
-    if set_account_base_when_id_found(id) == 'id found'
+    if account_base_set_when_id_found(id) == 'id found'
       @account_session_class.new(get_details_from_account(id))
     end
   end
@@ -37,10 +37,10 @@ class App
 
   private
 
-  def set_account_base_when_id_found(id)
+  def account_base_set_when_id_found(id)
     company_guid.each do |account_base|
       get_account_base(account_base)
-      return('id found') if accounts.any? { |account| account["id"] == id }
+      return('id found') if accounts.any? { |account| account['id'] == id }
     end
   end
 
