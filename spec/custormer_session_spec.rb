@@ -26,7 +26,7 @@ describe CustomerSession do
     'lastname' => 'testlastname3',
     'email' => 'testemail3',
     'telephone' => '0033',
-    'balance' => '2000.00'
+    'balance' => '-2000.00'
   }
 
   account_list = [acc1, acc2, acc3]
@@ -46,6 +46,12 @@ describe CustomerSession do
 
     it 'Should return false if an account matching the id does not exist' do
       expect(subject.get_contact_information('NotThere')).to eq(false)
+    end
+  end
+
+  describe '#overdrawn_accounts' do
+    it 'Should return an array of the ids and balances of accounts that have been overdrawn' do
+      expect(subject.overdrawn_accounts).to eq(['888', '-2000.00'])
     end
   end
 
