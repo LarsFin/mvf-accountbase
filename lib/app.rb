@@ -10,6 +10,10 @@ class App
     @account_session_class = account_session_class
   end
 
+  def create_account_session(id)
+    @account_session_class.new
+  end
+
   def verify_id(id)
     accounts.any? { |account| account['id'] == id }
   end
