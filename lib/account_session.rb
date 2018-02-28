@@ -7,6 +7,12 @@ class AccountSession
   end
 
   def balance
-    details["balance"]
+    get_detail('balance')
+  end
+
+  private
+
+  def get_detail(param)
+    details[param]
   end
 end
