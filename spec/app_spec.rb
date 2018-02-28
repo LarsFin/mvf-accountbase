@@ -25,11 +25,18 @@ describe App do
 
   describe '#create_account_session' do
     it 'Should call the instantiation of a new instance of "account_session_class" with a valid id given' do
-      expect(subject.create_account_session('861fc585-3313-4928-891d-c8711dfe3f8a')).to eq('new called')
+      expect(account_session_class).to receive(:new)
+      subject.create_account_session('861fc585-3313-4928-891d-c8711dfe3f8a')
     end
 
     it 'Should not call the instantiation if a non matching guid is given' do
-      expect(subject.create_account_session('notrealguid')).to_not eq('new called')
+      expect(account_session_class).not_to receive(:new)
+      subject.create_account_session('notrealguid')
+    end
+
+    it "Should call instantiation with the details of the user matching the id" do
+      expect(account_session_class).to receive(:new).with({"id":"861fc585-3313-4928-891d-c8711dfe3f8a","firstname":"Izayah","lastname":"Hayden","email":"Izaya.HAY6958@yopmail.com","telephone":"01035 837401","balance":"8,759.84"})
+      subject.create_account_session('861fc585-3313-4928-891d-c8711dfe3f8a')
     end
   end
 
