@@ -16,4 +16,10 @@ describe Controller do
     end
   end
 
+  describe '#run_app' do
+    it 'should output welcom message' do
+      expect { subject.run }.to output("Welcome").to_stdout
+    end
+  end  
+
 end
