@@ -20,6 +20,10 @@ class App
     @customer_session_class.new(accounts)
   end
 
+  def build_uri(key)
+    "https://mvf-devtest-s3api.s3-eu-west-1.amazonaws.com/#{key}"
+  end
+
   private
 
   def verify_id(id)
