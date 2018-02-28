@@ -2,8 +2,10 @@ require_relative '../lib/app.rb'
 
 describe App do
 
-  it 'A pre test' do
-    expect(1 + 1).to equal(2)
+  subject { described_class.new }
+
+  it 'App should be initialised with an array set to an attirbute "accounts"' do
+    expect(subject.accounts).to be_a Array
   end
 
 end
