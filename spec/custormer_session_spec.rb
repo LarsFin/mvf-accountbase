@@ -39,13 +39,13 @@ describe CustomerSession do
     end
   end
 
-  describe '#get_account' do
+  describe '#get_contact_information' do
     it 'Should get the information of the specified account' do
-      expect(subject.get_account('105')).to eq("id" => "105","firstname" => "test2","lastname" => "doggo","email" => "testemail2","telephone" => "9999","balance" => "100.00")
+      expect(subject.get_contact_information('105')).to eq(['test2', 'doggo', 'testemail2', '9999'])
     end
 
     it 'Should return false if an account matching the id does not exist' do
-      expect(subject.get_account('NotThere')).to eq(false)
+      expect(subject.get_contact_information('NotThere')).to eq(false)
     end
   end
 
