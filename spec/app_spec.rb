@@ -52,4 +52,10 @@ describe App do
     end
   end
 
+  describe '#build_uri' do
+    it 'Should return the uri with the key added to end' do
+      expect(subject.build_uri('test_kettle')).to eq('https://mvf-devtest-s3api.s3-eu-west-1.amazonaws.com/test_kettle')
+    end
+  end
+
 end
