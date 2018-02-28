@@ -5,10 +5,15 @@ require 'json'
 require 'net/http'
 # App to be used as the controller by the user
 class App
-  attr_reader :accounts, :account_session_class, :customer_session_class, :company_guid
+  attr_reader :accounts,
+              :account_session_class,
+              :customer_session_class,
+              :company_guid
 
-  def initialize(account_session_class, customer_session_class, current_company_guid)
-    @accounts
+  def initialize(account_session_class,
+                 customer_session_class,
+                 current_company_guid)
+    @accounts = []
     @account_session_class = account_session_class
     @customer_session_class = customer_session_class
     @company_guid = current_company_guid
