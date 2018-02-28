@@ -10,6 +10,10 @@ describe Controller do
       expect(app_class).to receive(:new).with('1', '2', '3')
       Controller.new(app_class, '1', '2', '3')
     end
+
+    it 'should be instantiated with a current_user attribute that is nil' do
+      expect(subject.current_user).to be(nil)
+    end
   end
 
 end
