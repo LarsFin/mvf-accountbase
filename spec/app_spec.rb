@@ -46,9 +46,14 @@ describe App do
   end
 
   describe '#create_customer_session' do
-    it 'Should call the instantiation of a new instance of "customer_session_class"' do
+    it 'Should call the instantiation of a new instance of "customer_session_class" if key is correct' do
       expect(customer_session_class).to receive(:new)
-      subject.create_customer_session
+      subject.create_customer_session('key1')
+    end
+
+    it 'Should not call the instantiation of a new instance of "customer_session_class" if key is incorrect' do
+      expect(customer_session_class).to_not receive(:new)
+      subject.create_customer_session('wrench')
     end
   end
 

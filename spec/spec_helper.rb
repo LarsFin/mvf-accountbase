@@ -8,7 +8,9 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new( [
   SimpleCov::Formatter::Console,
 ] )
 
-SimpleCov.start
+SimpleCov.start do
+  add_filter "controller.rb"
+end
 
 RSpec.configure do |config|
 
@@ -22,6 +24,9 @@ RSpec.configure do |config|
     stub_request(:get, "https://mvf-devtest-s3api.s3-eu-west-1.amazonaws.com/key3").
       with(headers: {'Accept'=>'*/*', 'User-Agent'=>'Ruby'}).
       to_return(status: 200, body: '{"accounts":[{"id":"testid2","firstname":"test2","lastname":"testln2","email":"testemail2","telephone":"test","balance":"9.00"}]}', headers: {})
+    stub_request(:get, "https://mvf-devtest-s3api.s3-eu-west-1.amazonaws.com/wrench").
+      with(headers: {'Accept'=>'*/*', 'User-Agent'=>'Ruby'}).
+      to_return(status: 200, body: 'Not valid', headers: {})
   end
 
   config.expect_with :rspec do |expectations|

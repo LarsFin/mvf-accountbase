@@ -43,7 +43,7 @@ To start app:
 
 If I had more time I would have looked into:
 
-  - Testing the controller. The gets methods proved difficult to stub as it would cycle through an infinite loop if the input was unrecognisable and deliver unwanted responses.
+  - Testing the controller. The gets methods proved difficult to stub as it would cycle through an infinite loop if the input was unrecognisable and deliver unwanted responses. 
 
   - Refactoring. Some classes seemed to repeat code which would have been nice to take away. Possibly an AccountBase class that took methods to interpret it's data and extract information.
 

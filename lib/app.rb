@@ -26,8 +26,13 @@ class App
     end
   end
 
-  def create_customer_session
-    @customer_session_class.new(accounts)
+  def create_customer_session(key)
+    begin
+      if get_account_base(key)
+        @customer_session_class.new(accounts)
+      end
+    rescue JSON::ParserError
+    end
   end
 
   def get_account_base(key)
