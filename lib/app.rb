@@ -21,6 +21,6 @@ class App
   end
 
   def get_details(id)
-    @accounts.select { |account| account['id'] == id }.pop()
+    @accounts.select { |account| account['id'] == id }.pop
   end
 end
