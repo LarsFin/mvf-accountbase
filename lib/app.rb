@@ -23,8 +23,8 @@ class App
 
   def get_account_base(key)
     url = build_url(key)
-    json = get_JSON(url)
-    parse(json)
+    json = get_json(url)
+    @accounts = parse(json)['accounts']
   end
 
   private
