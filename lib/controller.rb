@@ -19,16 +19,32 @@ class Controller
 
   def account_holder?
     puts 'Are you an account holder?'
+    input = evaluate(gets.chomp)
+    if input == 'not-recognisable'
+      account_holder?
+    else
+      input ? enter_account_holder_id : customer?
+    end
+  end
+
+  def customer?
+    puts 'Are you a customer?'
+  end
+
+  def enter_account_holder_id
+    puts 'Please enter your id'
   end
 
   def evaluate(input)
     return(false) if input[0].casecmp('n').zero?
     return(true) if input[0].casecmp('y').zero?
     quit if %w[quit exit].include?(input)
+    puts 'Unrecognisable input, please try again'
     'not-recognisable'
   end
 
   def quit
     puts "Thankyou,\nclosing..."
+    exit 
   end
 end
