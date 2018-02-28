@@ -5,4 +5,8 @@ class AccountSession
   def initialize(details)
     @details = details
   end
+
+  def balance
+    details["balance"]
+  end
 end
