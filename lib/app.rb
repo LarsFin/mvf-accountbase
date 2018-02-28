@@ -9,6 +9,6 @@ class App
   end
 
   def verify_id(id)
-    accounts.any? { |k, v| k == 'id' && v == id }
+    accounts.any? { |account| account['id'] == id }
   end
 end
