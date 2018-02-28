@@ -33,6 +33,49 @@ class Controller
 
   def enter_account_holder_id
     puts 'Please enter your id'
+    if @current_user = @app.create_account_session(gets.chomp)
+      puts "Hello #{@current_user.details['firstname']}!"
+      list_account_holder_actions
+    else
+      puts 'couldnt find'
+    end
+  end
+
+  def list_account_holder_actions
+    puts 'Type the respective character for your choice'
+    puts '1. View Info'
+    puts '2. View Balance'
+    puts '3. Logout'
+    puts 'q. Quit'
+    account_holder_choice
+  end
+
+  def account_holder_choice
+    case gets.chomp
+    when '1'
+      pretty_print_details(@current_user.information)
+    when '2'
+      puts "\n"
+      puts "£#{@current_user.balance}"
+      puts "\n"
+    when '3'
+      @current_user = nil
+      account_holder?
+    when 'q'
+      quit
+    else
+      puts 'Unrecognisable input, please try again'
+    end
+    list_account_holder_actions
+  end
+
+  def pretty_print_details(details)
+    puts "\n"
+    puts "First name:   |   #{details[0]}"
+    puts "Last name:    |   #{details[1]}"
+    puts "Email:        |   #{details[2]}"
+    puts "Telephone:    |   #{details[3]}"
+    puts "\n"
   end
 
   def evaluate(input)
@@ -45,6 +88,6 @@ class Controller
 
   def quit
     puts "Thankyou,\nclosing..."
-    exit 
+    exit
   end
 end

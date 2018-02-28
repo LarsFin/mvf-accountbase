@@ -1,7 +1,7 @@
 # MVF API
 An application to implement the following user stories;
 
-priority -> **4** √ 
+priority -> **4** √
 ```
 As an account holder,
 I want to check my balance,
@@ -35,3 +35,16 @@ As an account holder,
 I want to have to verify myself,
 so that my information is safe.
 ```
+
+To start app:
+```
+  $ ruby runapp.rb
+```
+
+If I had more time I would have looked into:
+
+  - Testing the controller. The gets methods proved difficult to stub as it would cycle through an infinite loop if the input was unrecognisable and deliver unwanted responses.
+
+  - Refactoring. Some classes seemed to repeat code which would have been nice to take away. Possibly an AccountBase class that took methods to interpret it's data and extract information.
+
+  - A printer class would have definitely been nice.
