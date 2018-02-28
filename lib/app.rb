@@ -28,7 +28,7 @@ class App
   def get_account_base(key)
     url = build_url(key)
     uri = URI(url)
-    response = Net::HTTP.get(uri)
+    Net::HTTP.get(uri)
   end
 
   private
