@@ -48,3 +48,5 @@ If I had more time I would have looked into:
   - Refactoring. Some classes seemed to repeat code which would have been nice to take away. Possibly an AccountBase class that took methods to interpret it's data and extract information.
 
   - A printer class would have definitely been nice.
+  
+  - Also taken on the bonus stories.
