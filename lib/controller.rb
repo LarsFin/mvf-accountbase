@@ -25,7 +25,7 @@ class Controller
     return(false) if input[0].casecmp('n').zero?
     return(true) if input[0].casecmp('y').zero?
     quit if %w[quit exit].include?(input)
-    return('not-recognisable')
+    'not-recognisable'
   end
 
   def quit
