@@ -3,7 +3,8 @@ require_relative '../lib/app.rb'
 describe App do
 
   let(:account_session_class) { double('account_session_class', new: 'new called') }
-  subject { described_class.new(account_session_class) }
+  let(:customer_session_class) { double('customer_session_class') }
+  subject { described_class.new(account_session_class, customer_session_class) }
 
   describe 'App instantiation' do
     describe '#App_accounts' do
@@ -19,6 +20,10 @@ describe App do
     describe '#App_account_session_class' do
       it 'App can be passed a parameter upon instantiation that is set to an "account_session_class" attr' do
         expect(subject.account_session_class).to eq(account_session_class)
+      end
+
+      it 'App can be passed a second parameter upon instantiation that is set to a "customer_session_class" attr' do
+        expect(subject.customer_session_class).to eq(customer_session_class)
       end
     end
   end
